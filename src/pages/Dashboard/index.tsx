@@ -52,7 +52,7 @@ const Dashboard = () => {
               <div className="card rounded border-0 bg-primary">
                 <div className="card-body text-center p-4">
                   <Switch>
-                    <Route path={${match.path}/:discordId}>
+                    <Route path={`${match.path}/:discordId`}>
                       <TopInfo />
                     </Route>
                     <Route path={match.path}>
