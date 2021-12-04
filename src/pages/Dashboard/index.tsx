@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageState from "components/PageState";
 import { contractAddress } from "config";
 import { useContext, useDispatch } from "context";
+import TopInfo from "./TopInfo";
 
 
 const Dashboard = () => {
