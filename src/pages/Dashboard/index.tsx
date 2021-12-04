@@ -1,5 +1,10 @@
 import * as React from "react";
-import { BrowserRouter as Router, Switch, Route, useRouteMatch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch
+} from "react-router-dom";
 import TopInfo from "./TopInfo";
 
 const Dashboard = () => {
