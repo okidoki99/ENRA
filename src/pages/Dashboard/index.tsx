@@ -72,7 +72,7 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-     </Router>
+    </Router>
   );
 };
 
