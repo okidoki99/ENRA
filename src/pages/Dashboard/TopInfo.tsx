@@ -1,5 +1,6 @@
 import * as React from "react";
 import * as Dapp from "@elrondnetwork/dapp";
+import { useParams } from "react-router-dom";
 import Denominate from "./../../components/Denominate";
 
 const TopInfo = () => {
@@ -7,7 +8,8 @@ const TopInfo = () => {
     address,
     account: { balance },
   } = Dapp.useContext();
-
+  const { discordId } = useParams();
+  console.log(discordId);
   return (
     <div className="text-white" data-testid="topInfo">
       <div className="mb-1">
