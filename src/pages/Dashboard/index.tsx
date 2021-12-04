@@ -1,10 +1,10 @@
 import * as React from "react";
-import * as Dapp from "@elrondnetwork/dapp";
+/*import * as Dapp from "@elrondnetwork/dapp";
 import { faBan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageState from "components/PageState";
 import { contractAddress } from "config";
-import { useContext, useDispatch } from "context";
+import { useContext, useDispatch } from "context";*/
 import TopInfo from "./TopInfo";
 
 const Dashboard = () => {
