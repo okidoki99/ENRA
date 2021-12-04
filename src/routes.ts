@@ -24,7 +24,7 @@ const routes: RouteType[] = [
     component: Home,
   },
   {
-    path: "/dashboard/:topicId",
+    path: "/dashboard",
     title: "Dashboard",
     component: Dashboard,
     authenticatedRoute: true,
