@@ -1,11 +1,10 @@
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import TopInfo from "./TopInfo";
 
 const Dashboard = () => {
   const ref = React.useRef(null);
-  const { topicId } = useParams();
-  console.log(topicId);
+  const match = useRouteMatch();
   /*const { apiAddress, address } = Dapp.useContext();
   const { transactionsFetched } = useContext();
   const dispatch = useDispatch();
@@ -52,8 +51,14 @@ const Dashboard = () => {
             <div className="card-body p-1">
               <div className="card rounded border-0 bg-primary">
                 <div className="card-body text-center p-4">
-                  {{ topicId }}
-                  <TopInfo />
+                  <Switch>
+                    <Route path={${match.path}/:discordId}>
+                      <TopInfo />
+                    </Route>
+                    <Route path={match.path}>
+                      <h3>Please provide a discord id.</h3>
+                    </Route>
+                  </Switch>
                 </div>
               </div>
             </div>
