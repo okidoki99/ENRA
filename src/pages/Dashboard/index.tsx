@@ -7,7 +7,7 @@ import { contractAddress } from "config";
 import { useContext, useDispatch } from "context";
 
 
-const Dashboard = () => {
+/*const Dashboard = () => {
   const ref = React.useRef(null);
   const { apiAddress, address } = Dapp.useContext();
   const { transactionsFetched } = useContext();
@@ -45,7 +45,7 @@ const Dashboard = () => {
         className="dapp-icon icon-medium"
       />
     );
-  }
+  } */
 
   return (
     <div className="container py-4" ref={ref}>
