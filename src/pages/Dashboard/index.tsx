@@ -9,6 +9,7 @@ import TopInfo from "./TopInfo";
 
 const Dashboard = () => {
   const ref = React.useRef(null);
+  const { topicId } = useParams();
   /*const { apiAddress, address } = Dapp.useContext();
   const { transactionsFetched } = useContext();
   const dispatch = useDispatch();
@@ -55,6 +56,7 @@ const Dashboard = () => {
             <div className="card-body p-1">
               <div className="card rounded border-0 bg-primary">
                 <div className="card-body text-center p-4">
+                  {{topicId}}
                   <TopInfo />
                 </div>
               </div>
