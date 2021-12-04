@@ -1,5 +1,9 @@
 import * as React from "react";
-import { useRouteMatch } from "react-router-dom";
+import {
+  Switch,
+  Route,
+  useRouteMatch
+} from "react-router-dom";
 import TopInfo from "./TopInfo";
 
 const Dashboard = () => {
