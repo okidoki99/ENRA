@@ -7,8 +7,8 @@ import { contractAddress } from "config";
 import { useContext, useDispatch } from "context";
 
 
-/*const Dashboard = () => {
-  const ref = React.useRef(null);
+const Dashboard = () => {
+/*  const ref = React.useRef(null);
   const { apiAddress, address } = Dapp.useContext();
   const { transactionsFetched } = useContext();
   const dispatch = useDispatch();
