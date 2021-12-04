@@ -49,6 +49,7 @@ const Dashboard = () => {
   } */
 
   return (
+   <Router>
     <div className="container py-4" ref={ref}>
       <div className="row">
         <div className="col-12 col-md-10 mx-auto">
@@ -71,6 +72,7 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
+   </Router>
   );
 };
 
