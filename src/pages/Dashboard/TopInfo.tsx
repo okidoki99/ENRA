@@ -8,7 +8,7 @@ const TopInfo = () => {
     address,
     account: { balance },
   } = Dapp.useContext();
-  const { discordId } = useParams();
+  const discordId = useParams();
   console.log(discordId);
   return (
     <div className="text-white" data-testid="topInfo">
