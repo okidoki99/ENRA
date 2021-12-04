@@ -8,7 +8,7 @@ import { useContext, useDispatch } from "context";
 import TopInfo from "./TopInfo";
 
 const Dashboard = () => {
- /*  const ref = React.useRef(null);
+  /*const ref = React.useRef(null);
   const { apiAddress, address } = Dapp.useContext();
   const { transactionsFetched } = useContext();
   const dispatch = useDispatch();
