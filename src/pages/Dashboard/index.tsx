@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import TopInfo from "./TopInfo";
 
+const query = new URLSearchParams(this.props.location.search);
+const token = query.get('token');
+console.log(token);
 const Dashboard = () => {
   const ref = React.useRef(null);
   const match = useRouteMatch();
