@@ -1,12 +1,9 @@
 import * as React from "react";
 import * as Dapp from "@elrondnetwork/dapp";
-import { useParams } from "react-router-dom";
-import Denominate from "./../../components/Denominate";
 
 const TopInfo = () => {
   const {
     address,
-    account: { balance },
   } = Dapp.useContext();
 
   return (

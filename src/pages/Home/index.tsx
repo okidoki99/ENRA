@@ -1,8 +1,8 @@
 import * as React from "react";
+import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { dAppName } from "config";
 import { routeNames } from "routes";
-import { useParams } from "react-router-dom";
 
 const Home = () => {
   const { discordId } : any = useParams();
