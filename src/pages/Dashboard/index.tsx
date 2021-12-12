@@ -1,20 +1,17 @@
 import * as React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useRouteMatch,
-} from "react-router-dom";
+import * as Dapp from "@elrondnetwork/dapp";
+import { faBan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PageState from "components/PageState";
+import { contractAddress } from "config";
+import { useContext, useDispatch } from "context";
+import { getTransactions } from "./helpers/asyncRequests";
 import TopInfo from "./TopInfo";
+import Transactions from "./Transactions";
 
-//const query = new URLSearchParams(this.props.location.search);
-//const token = query.get("token");
-//console.log(token);
 const Dashboard = () => {
   const ref = React.useRef(null);
-  const match = useRouteMatch();
-  console.log(match.params);
-  /*const { apiAddress, address } = Dapp.useContext();
+  const { apiAddress, address } = Dapp.useContext();
   const { transactionsFetched } = useContext();
   const dispatch = useDispatch();
 
@@ -50,34 +47,24 @@ const Dashboard = () => {
         className="dapp-icon icon-medium"
       />
     );
-  } */
+  }
 
   return (
-    <Router>
-      <div className="container py-4" ref={ref}>
-        <div className="row">
-          <div className="col-12 col-md-10 mx-auto">
-            <div className="card shadow-sm rounded border-0">
-              <div className="card-body p-1">
-                <div className="card rounded border-0 bg-primary">
-                  <div className="card-body text-center p-4">
-                    <Switch>
-                      <Route path={`${match.path}/:discordId`}>
-                        <TopInfo />
-                      </Route>
-                      <Route path={match.path}>
-                        <h3>Please provide a discord id.</h3>
-                      </Route>
-                    </Switch>
-                  </div>
+    <div className="container py-4" ref={ref}>
+      <div className="row">
+        <div className="col-12 col-md-10 mx-auto">
+          <div className="card shadow-sm rounded border-0">
+            <div className="card-body p-1">
+              <div className="card rounded border-0 bg-primary">
+                <div className="card-body text-center p-4">
+                  <TopInfo />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Router>
+    </div>
   );
 };
-
 export default Dashboard;

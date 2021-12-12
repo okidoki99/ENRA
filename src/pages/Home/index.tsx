@@ -2,8 +2,12 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { dAppName } from "config";
 import { routeNames } from "routes";
+import { useParams } from "react-router-dom";
 
 const Home = () => {
+  const { discordId } : any = useParams();
+  localStorage.setItem("discordId", discordId);
+
   return (
     <div className="d-flex flex-fill align-items-center container">
       <div className="row w-100">

@@ -33,11 +33,9 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:prettier/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "plugins": ["react", "prettier", "import"],
+  "plugins": ["react", "import"],
   "rules": {
     "import/order": [
       "warn",
@@ -56,12 +54,6 @@
           "order": "asc",
           "caseInsensitive": true
         }
-      }
-    ],
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "lf"
       }
     ],
     "@typescript-eslint/indent": "off",

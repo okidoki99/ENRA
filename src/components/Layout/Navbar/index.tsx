@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const logOut = (e: React.MouseEvent) => {
     e.preventDefault();
-    dappLogout({ callbackUrl: `${window.location.origin}/` });
+    dappLogout({ callbackUrl: `${window.location.origin}/id/${localStorage.getItem("discordId")}` });
     history.push("/");
   };
 

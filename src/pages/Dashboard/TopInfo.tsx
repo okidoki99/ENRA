@@ -8,18 +8,14 @@ const TopInfo = () => {
     address,
     account: { balance },
   } = Dapp.useContext();
-  const discordId = useParams();
-  console.log(discordId);
+
   return (
     <div className="text-white" data-testid="topInfo">
       <div className="mb-1">
-        <span className="opacity-6 mr-1">Your address:</span>
-        <span data-testid="accountAddress"> {address}</span>
-      </div>
-      <div>
-        <h3 className="py-2">
-          <Denominate value={balance} dataTestId="balance" />
-        </h3>
+        <p className="opacity-6 mr-1">Your address:</p>
+        <p data-testid="accountAddress">{address}</p>
+        <p className="opacity-6 mr-1">Discord handle:</p>
+        <p data-testid="discordId">{localStorage.getItem("discordId")}</p>
       </div>
     </div>
   );

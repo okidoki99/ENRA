@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 type RouteType = Dapp.RouteType & { title: string };
 
 export const routeNames = {
-  home: "/",
+  home: "/id/:discordId",
   dashboard: "/dashboard",
   transaction: "/transaction",
   unlock: "/unlock",
@@ -19,7 +19,7 @@ export const routeNames = {
 
 const routes: RouteType[] = [
   {
-    path: "/",
+    path: "/id/:discordId",
     title: "Home",
     component: Home,
   },
