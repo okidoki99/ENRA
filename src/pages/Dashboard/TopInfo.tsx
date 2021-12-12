@@ -92,6 +92,7 @@ const TopInfo = () => {
         <div className="card-body text-center p-4">
           <div className="text-white" data-testid="topInfo">
             <div className="mb-1">
+              <h3>You can now disconnect and return to discord!</h3>
               <p className="opacity-6 mr-1">Your address:</p>
               <p data-testid="accountAddress">{address}</p>
               <p className="opacity-6 mr-1">Discord handle:</p>
