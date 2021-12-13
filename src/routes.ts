@@ -3,13 +3,15 @@ import * as Dapp from "@elrondnetwork/dapp";
 import { dAppName } from "config";
 import withPageTitle from "./components/PageTitle";
 import Dashboard from "./pages/Dashboard";
+import Discord from "./pages/Discord";
 import Home from "./pages/Home";
 //import Transaction from "./pages/Transaction";
 
 type RouteType = Dapp.RouteType & { title: string };
 
 export const routeNames = {
-  home: "/id/:discordId",
+  home: "/",
+  discord: "/id/:discordId",
   dashboard: "/dashboard",
   transaction: "/transaction",
   unlock: "/unlock",
@@ -19,21 +21,21 @@ export const routeNames = {
 
 const routes: RouteType[] = [
   {
-    path: "/id/:discordId",
+    path: "/",
     title: "Home",
     component: Home,
+  },
+  {
+    path: "/id/:discordId",
+    title: "Discord",
+    component: Discord,
   },
   {
     path: "/dashboard",
     title: "Dashboard",
     component: Dashboard,
     authenticatedRoute: true,
-  },
-  /*{
-    path: "/transaction",
-    title: "Transaction",
-    component: Transaction,
-  },*/
+  }
 ];
 
 const wrappedRoutes = () =>
