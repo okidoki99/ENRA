@@ -19,8 +19,7 @@ const Discord = () => {
               </h2>
 
               <p className="mb-3">
-                This is ENRA dapp.
-                <br /> Login using your Elrond wallet.
+                Login using your Elrond wallet.
               </p>
 
               <Link
