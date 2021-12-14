@@ -3,7 +3,7 @@ import * as Dapp from "@elrondnetwork/dapp";
 import { Navbar as BsNavbar, NavItem, Nav } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { dAppName } from "config";
-import { ReactComponent as ElrondLogo } from "./../../../assets/img/elrond.svg";
+import { ReactComponent as ElrondLogo } from "./../../../assets/img/elrond-symbol.svg";
 
 const Navbar = () => {
   const { loggedIn } = Dapp.useContext();
@@ -17,22 +17,30 @@ const Navbar = () => {
   };
 
   return (
-    <BsNavbar className="bg-white border-bottom px-4 py-3">
+    <BsNavbar>
       <div className="container-fluid">
         <Link
           className="d-flex align-items-center navbar-brand mr-0"
           to={loggedIn ? "/dashboard" : "/"}
         >
           <ElrondLogo className="elrond-logo" />
-          <span className="dapp-name text-muted">{dAppName}</span>
+          <span className="dapp-name">{dAppName}</span>
         </Link>
 
         <Nav className="ml-auto">
-          {loggedIn && (
+
             <NavItem>
-              <a href="/" onClick={logOut}>
-                Disconnect
-              </a>
+              <Nav.Link href="/">Support</Nav.Link>
+            </NavItem>
+            <NavItem>
+              <Nav.Link href="/">Commands</Nav.Link>
+            </NavItem>
+            <NavItem className="donate">
+              <Nav.Link href="/"><strong>Donate</strong></Nav.Link>
+            </NavItem>
+          {loggedIn && (
+            <NavItem className="disconnect">
+              <Nav.Link href="/" onClick={logOut}><strong>Disconnect</strong></Nav.Link>
             </NavItem>
           )}
         </Nav>

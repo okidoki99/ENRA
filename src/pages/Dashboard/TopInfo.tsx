@@ -88,7 +88,7 @@ const TopInfo = () => {
 
   return (
     <div>
-      <div style={{display: userFound === false ? "none" : "block" }} className="card rounded border-0 bg-primary">
+      <div style={{display: userFound === false ? "none" : "block" }} className="card rounded border-0 bg-custom">
         <div className="card-body text-center p-4">
           <div className="text-white" data-testid="topInfo">
             <div className="mb-1">
