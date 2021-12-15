@@ -1,6 +1,5 @@
-import Hero from "components/Hero";
 import * as React from "react";
-import { useParams } from "react-router-dom";
+import Hero from "components/Hero";
 
 const Home = () => {
   return (
