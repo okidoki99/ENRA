@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <BsNavbar>
+    <BsNavbar className="bg-custom">
       <div className="container-fluid">
         <Link
           className="d-flex align-items-center navbar-brand mr-0"
@@ -26,9 +26,7 @@ const Navbar = () => {
           <ElrondLogo className="elrond-logo" />
           <span className="dapp-name">{dAppName}</span>
         </Link>
-
         <Nav className="ml-auto">
-
             <NavItem>
               <Nav.Link href="/">Support</Nav.Link>
             </NavItem>
