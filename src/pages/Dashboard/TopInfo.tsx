@@ -5,6 +5,7 @@ import { GoogleSpreadsheet } from "google-spreadsheet";
 // Config variables
 const SPREADSHEET_ID = "1i8qjPCOtUfDd6VIoVXRyxsXz-kPCGirFG1ZzZfre_X4";
 const SHEET_3_ID = "432853593";
+const SHEET_4_ID = "60024855";
 const SHEET_1_ID = "0";
 const CLIENT_EMAIL = "enra-admin@coffee-shop-clwvwp.iam.gserviceaccount.com";
 const PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCix+D/GAovXjWj\nbY9A4bXu6wZWl5pS4aKNXN5qjofHBDxlWudRICk5il/N/9KhubuaMr1DSLpe7+bA\nheTVFFzmQV4ZYeik6LnRpj7rXyU+Qh/2f31tDCQq6eftrSIVSGkve+OPRJejLwLf\nACGM00yA/nw6V3DD8JJSxSRzEmAH42L3KCd9+h/rohzoXJag/Yj2uTnihZC0xi83\n1qHyc2wOOwK0Zn3wzh6gJk17FS0m36cBN1TBouv5G7DXx5Z2asjXNzAI+UEB4rVS\nUZyL4brAs/4LWiIWHhZhYWi3KF2TZ16QmxSY3ZDIbv4aPNgw2TgSYtMXrOatKOjG\nel7uiDOJAgMBAAECggEADXgfjcwV76nKeMLp3chaGbJjJwrKr2f8ii5F4yhMY4iI\nsimi8VYJbeRIHXoOb5O4SmqUuZAM3SqEUVLi8UoK49dDK4jWoL/3EY9sLmVZkLy/\npfxnoFHRs6arf8GvNnae6YRv+xywYBrVkHvoysfN0UX9eTBfZCnbBF6hWk+KGFeI\n4Sc7KMThUDYlLnhbNuBlYg3wzJk919Vt9IJwu20OaKPqbpr2H/rB8ezR3xKXK7hV\nDRoNvNIXKRWZYxeeMSwbBKZ4trsOU1IJXfYjtXlenyZ/bqavNg1zQtU/0bfVIqKH\nhig2D72VOnd/5b8xXNf/MW2YUrQM5mX89K0bKHqvxwKBgQDkW36ZfooyKaj1W1ZB\n2+xJn143EbergDWGIbjpkl9LcHKnwtyevfgxtHPx/XxIJDlyO38Xua/S3KrManRb\naLExOkS8TE//8d3teYUeUvSy29oZSGu482N6JGnVbBubLiJtETQyTP63QEnkuIoi\nStizrSWDvIhblP2ww3pzatiaewKBgQC2fD+I6kM+H+kuAUmyIMFkHE6QG1HiGg+O\noRnMZdEFfnn2mjOIn00U3Ze53zeGXh8/9rVj0XTRcQBhuSYCB1R62fi0p2OgvCkZ\nI4dHRGLFOkyq5rmbfsTG0msqEYsoQ4AGNoyVtj0T9PzKQ/X18yfxGlKm23mpd5jH\ne/N1AszcywKBgQCDD/gzRKswazSrzYZOOlj9UFiUpriR1/3gRA6LEBVdiOZlXrOc\n8E84x+cb5m6kQRYvd/JTvaEqFrh4pkiuBgJczKKSqAHqVfkXyP0cEGSdGw2sISKi\nfh6EBc4wTeHySKI9kvgwPnya1G0Uts2hLO/+/8teNqDUX0jTYP4wrAwxbQKBgHca\n+4EKnd7zhwdu8cHgnTkRPLnUCwrPRa4rOiJtphK27TXmiZI3n2DqDPjVV3FNB4qB\nJP1EncGBxuUBqmwSirIwiKKoyl8D0LNGvCno2aqvFZFKTITQJfE7L5TipHggLnRf\nsDybGJxo/4Go/+WK0lwMeTvM7kiM9dvl7A5ISJwnAoGAeTR2Q+/Mf4dyjyKCikpp\nNriHmORcJlMHDtFJEcZSazMTHMamvPP1N4UjAWO1Wn73XPxF7Lw4NbRm/r244z0M\nQbOsTiOU3oeLHNd+EOyhYbqUulvsho2BG9j24qeNNdD9VjGOtwH0gkxL3ROJDNIK\n+BlQIZGztASYaX//LC5RUng=\n-----END PRIVATE KEY-----\n";
@@ -18,7 +19,7 @@ const TopInfo = () => {
   const [userFound, setUserFound] = React.useState(true);
   const [fetchData, setFetchData] = React.useState(true);
 
-  const appendSpreadsheet = async (row:any) => {
+  const appendSpreadsheet = async (row:any, sheetId:any) => {
     try {
       await doc.useServiceAccountAuth({
         client_email: CLIENT_EMAIL,
@@ -27,7 +28,7 @@ const TopInfo = () => {
       // loads document properties and worksheets
       await doc.loadInfo();
   
-      const sheet = doc.sheetsById[SHEET_3_ID];
+      const sheet = doc.sheetsById[sheetId];
       await sheet.addRow(row);
     } catch (e) {
       console.error("Error: ", e);
@@ -60,6 +61,8 @@ const TopInfo = () => {
             existingUser[0].max = x.max;
             existingUser[0].roleID = x.roleID;
             await existingUser[0].save();
+            const newInputRow = {userID: localStorage.getItem("discordId"), erd: existingUser[0].erd, serverID: x.serverID, projectID: x.projectID, min: x.min, max: x.max, roleID: x.roleID};
+            appendSpreadsheet(newInputRow, SHEET_4_ID);
           }
           else if(existingUser.length <= sessions.length){ 
             const newInputRow = {userID: localStorage.getItem("discordId"), erd: existingUser[0].erd, serverID: x.serverID, projectID: x.projectID, min: x.min, max: x.max, roleID: x.roleID};
@@ -69,7 +72,8 @@ const TopInfo = () => {
             }
             else
             {
-              appendSpreadsheet(newInputRow);
+              appendSpreadsheet(newInputRow, SHEET_3_ID);
+              appendSpreadsheet(newInputRow, SHEET_4_ID);
             }
           }
         });
