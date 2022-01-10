@@ -28,10 +28,10 @@ const Navbar = () => {
         </Link>
         <Nav className="ml-auto">
             <NavItem>
-              <Nav.Link href="/">Support</Nav.Link>
+              <Nav.Link href="https://discord.gg/Mcza28we2w">Support</Nav.Link>
             </NavItem>
             <NavItem>
-              <Nav.Link href="/">Commands</Nav.Link>
+              <Nav.Link href="/commands">Commands</Nav.Link>
             </NavItem>
             <NavItem className="donate">
               <Nav.Link href="/"><strong>Donate</strong></Nav.Link>
