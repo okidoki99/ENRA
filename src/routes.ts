@@ -1,6 +1,7 @@
 import React from "react";
 import * as Dapp from "@elrondnetwork/dapp";
 import { dAppName } from "config";
+import Commands from "pages/Commands";
 import withPageTitle from "./components/PageTitle";
 import Dashboard from "./pages/Dashboard";
 import Discord from "./pages/Discord";
@@ -12,6 +13,7 @@ type RouteType = Dapp.RouteType & { title: string };
 export const routeNames = {
   home: "/",
   discord: "/id/:discordId",
+  commands: "/commands",
   dashboard: "/dashboard",
   transaction: "/transaction",
   unlock: "/unlock",
@@ -24,6 +26,11 @@ const routes: RouteType[] = [
     path: "/",
     title: "Home",
     component: Home,
+  },
+  {
+    path: "/commands",
+    title: "Commands",
+    component: Commands,
   },
   {
     path: "/id/:discordId",

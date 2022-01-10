@@ -9,6 +9,10 @@ export const HeroContainer = styled.div`
     height: 800px;
     z-index: 1;
     margin-left: 15px;
+
+    @media screen and (max-width: 768px) {
+        height: 600px;
+    }
 `;
 export const HeroBg = styled.div`
     position: absolute;
@@ -47,7 +51,7 @@ export const HeroH1 = styled.h1`
     }
 
     @media screen and (max-width: 480px) {
-        font-size: 18px;
+        font-size: 32px;
     }
 `;
 export const HeroP = styled.p`
@@ -72,5 +76,9 @@ export const HeroBtnWrapper = styled.div`
     flex-direction: column;
     align-items: left;
     max-width: 40%;
+
+    @media screen and (max-width: 480px) {
+        max-width: 60%;
+    }
 `;
 
