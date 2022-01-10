@@ -37,6 +37,15 @@ Override Bootstrap variables only above.
   background-color: #f15f4b;
   padding-left: 20px;
   align-items: center;
+
+  @media screen and (max-width: 480px) {
+    font-size: 10px;
+}
+}
+
+.importantMsg .warnContent
+{
+  margin-left: 10px;
 }
 
 .accordion {
@@ -65,6 +74,13 @@ Override Bootstrap variables only above.
   padding-left: 10px;
   color: #eeeeee;
   cursor: pointer;
+}
+
+.accordion .item .title h2
+{
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+}
 }
 
 .accordion .item .content

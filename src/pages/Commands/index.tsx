@@ -53,7 +53,7 @@ const Commands = () => {
   };
   return ( 
       <div className="wrapper">
-          <div className="importantMsg"><FiAlertTriangle/>&nbsp;<strong>Important: </strong>&nbsp;&nbsp;Make sure that the ENRA bot is under any Admin/mod role and ABOVE any role it needs to grant in order to work properly.</div>
+          <div className="importantMsg"><FiAlertTriangle/>&nbsp;<strong>Important: </strong><span className="warnContent">Make sure that the ENRA bot is under any Admin/mod role and ABOVE any role it needs to grant in order to work properly.</span></div>
           <div className="accordion">
               {data.map((item, i) => 
               (
