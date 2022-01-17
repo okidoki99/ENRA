@@ -60,12 +60,13 @@ const TopInfo = () => {
             existingUser[0].min = x.min;
             existingUser[0].max = x.max;
             existingUser[0].roleID = x.roleID;
+            existingUser[0].uniqINDEX = x.uniqINDEX;
             await existingUser[0].save();
-            const newInputRow = {userID: localStorage.getItem("discordId"), erd: existingUser[0].erd, serverID: x.serverID, projectID: x.projectID, min: x.min, max: x.max, roleID: x.roleID};
+            const newInputRow = {userID: localStorage.getItem("discordId"), erd: existingUser[0].erd, serverID: x.serverID, projectID: x.projectID, min: x.min, max: x.max, roleID: x.roleID, uniqINDEX: x.uniqINDEX};
             appendSpreadsheet(newInputRow, SHEET_4_ID);
           }
           else if(existingUser.length <= sessions.length){ 
-            const newInputRow = {userID: localStorage.getItem("discordId"), erd: existingUser[0].erd, serverID: x.serverID, projectID: x.projectID, min: x.min, max: x.max, roleID: x.roleID};
+            const newInputRow = {userID: localStorage.getItem("discordId"), erd: existingUser[0].erd, serverID: x.serverID, projectID: x.projectID, min: x.min, max: x.max, roleID: x.roleID, uniqINDEX: x.uniqINDEX};
             
             if(result3.filter(y=>y.serverID == newInputRow.serverID && y.projectID == newInputRow.projectID && y.userID == localStorage.getItem("discordId") && y.min == newInputRow.min && y.max == newInputRow.max && y.roleID == newInputRow.roleID).length > 0)
             {
